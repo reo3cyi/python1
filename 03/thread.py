@@ -39,6 +39,7 @@ def thread_counter(x):
     number += 1
     print(f'{x} - Thread End - {number}')
     lock.release()
+    
 # print('----- Threads Start -----')
 # thread_counter(0) 
 # thread_counter(1)
