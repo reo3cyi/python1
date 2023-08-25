@@ -77,7 +77,7 @@ print(var)
 
 # 리스트 컴프리헨션의 특징과 예
 var = []
-# var = list()
+#var = list()
 for data in range(1, 11):
     if data % 2 == 0:
         var.append(data)
@@ -105,7 +105,6 @@ try:
     print(next(var))
     print(next(var))
     print(next(var))
-
     print(next(var))
 except StopIteration:
     print('StopIteration')

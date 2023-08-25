@@ -5,32 +5,33 @@ print(var['name'])
 
 var['age'] = 33
 print(var)
-del var[1]
+del var[1]     #key를 찾아 지움(cf. index가 아님)
 print(var)
-var[1] = 'Hi'
+var[1] = 'Hi'  #key 1,value Hi를 추가
 print(var)
 
 var.update({'name' : 'hans', 'age' : 30})
 print(var)
 
+#[] list(array), () tuple, {} dictionary
 data_1 = {'1st' : 'chris', '2nd' : 'tommy', '3rd' : 'harry'}
 data_2 = {'3rd' : 'hans', '4th' : 'james', '5th' : 'jenny'}
-var = {**data_1, **data_2}
+var = {**data_1, **data_2}     #parameter값이 몇 개인지 모를 때 *list, **dictionary
 print(var)
 var = data_1 | data_2   # Python 3.9 이상에서만 사용 가능
 print(var)
 
 # 얕은 복사와 깊은 복사
 data_1 = {'1st' : 'chris', '2nd' : 'tommy', '3rd' : 'harry'}
-data_2 = data_1
+data_2 = data_1          #메모리 주소 복사
 print(data_1)
 print(data_2)
-data_1['1st'] = 'hans'
+data_1['1st'] = 'hans'   #data_1,data_2 모두 바뀜
 print(data_1)
 print(data_2)
 
 data_1 = {'1st' : 'chris', '2nd' : 'tommy', '3rd' : 'harry'}
-data_2 = data_1.copy()
+data_2 = data_1.copy()     #값만 복사
 print(data_1)
 print(data_2)
 data_1['1st'] = 'hans'
@@ -85,14 +86,12 @@ import json
 
 var = '{"chris" : 10, "tommy" : 30, "harry" : 20}'
 print(var)
-print(type(var))
+print(type(var))        #문자열
 
-var = json.loads(var)
+var = json.loads(var)   #json 형태의 dictionary
 print(var)
 print(type(var))
 
-var = json.dumps(var)
+var = json.dumps(var)   #json을 문자열로
 print(var)
-print(type(var))
-
-    
+print(type(var))    
